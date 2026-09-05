@@ -352,7 +352,7 @@
         .eval-slow { background-color: #fee2e2; color: #991b1b; }
         .eval-ontrack { background-color: #f1f5f9; color: #475569; }
         
-        /* COURSE DETAIL STYLES */
+        /* COURSE DETAIL STYLES - ACCORDION */
         .course-detail-container {
             background-color: var(--surface-color);
             border-radius: 10px;
@@ -386,24 +386,70 @@
             white-space: nowrap;
             margin-left: 1rem;
         }
-        .course-section {
-            margin-bottom: 2.5rem;
+        
+        details.course-section {
+            margin-bottom: 1.5rem;
         }
+        details.course-section summary {
+            list-style: none;
+            cursor: pointer;
+            outline: none;
+        }
+        details.course-section summary::-webkit-details-marker {
+            display: none;
+        }
+        
         .course-section h3 {
             font-size: 1.3rem;
             color: var(--text-primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0;
             border-left: 5px solid var(--primary-color);
             padding-left: 12px;
             background-color: #f8fafc;
-            padding: 0.8rem 0.8rem 0.8rem 12px;
-            border-radius: 0 4px 4px 0;
+            padding: 1rem 1.2rem 1rem 12px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s;
         }
+        
+        details.course-section summary:hover h3 {
+            background-color: #f1f5f9;
+        }
+        
+        .course-section h3::after {
+            content: "▼";
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        details[open].course-section h3::after {
+            transform: rotate(-180deg);
+        }
+        
+        details[open].course-section h3 {
+            border-radius: 4px 4px 0 0;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 0;
+        }
+        
         .course-list {
             list-style: none;
             padding: 0;
             margin: 0;
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            animation: slideDown 0.3s ease-out;
         }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .course-list li {
             padding: 0.8rem 1rem;
             border-bottom: 1px solid #f1f5f9;
@@ -460,11 +506,33 @@
             background: linear-gradient(135deg, #dcfce7, #bbf7d0);
             padding: 1.5rem;
             border-radius: 8px;
-            margin-top: 3rem;
+            margin-top: 1.5rem;
             color: #166534;
             font-weight: 600;
             font-size: 1.2rem;
             border: 1px solid #86efac;
+        }
+        
+        .expand-collapse-all {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        .btn-small {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-small:hover {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
@@ -1560,17 +1628,26 @@
                     <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+WEB101x_2.2-A_VN+0822.CCDN/course/" target="_blank" class="course-btn">Resume Course</a>
                 </div>
                 
-                <div class="course-section">
-                    <h3>Mở đầu</h3>
+                <div class="expand-collapse-all">
+                    <button class="btn-small" onclick="toggleAllDetails(true)">Mở rộng tất cả</button>
+                    <button class="btn-small" onclick="toggleAllDetails(false)">Thu gọn tất cả</button>
+                </div>
+                
+                <details class="course-section" open>
+                    <summary>
+                        <h3>Mở đầu</h3>
+                    </summary>
                     <ul class="course-list">
                         <li>Giới thiệu môn học</li>
                         <li>Hình thức đánh giá</li>
                         <li>Chuẩn bị học tập</li>
                     </ul>
-                </div>
+                </details>
                 
-                <div class="course-section">
-                    <h3>Phần 1. HTML cơ bản</h3>
+                <details class="course-section" open>
+                    <summary>
+                        <h3>Phần 1. HTML cơ bản</h3>
+                    </summary>
                     <ul class="course-list">
                         <li>Giới thiệu phần 1</li>
                         <li>Bài 1. Giới thiệu về lập trình web <span class="quiz-tag">Quiz 📝</span></li>
@@ -1580,10 +1657,12 @@
                         <li>Chia sẻ của học viên về nội dung phần 1</li>
                         <li>Slide tổng kết: Lập trình web với HTML</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="course-section">
-                    <h3>Phần 2. CSS cơ bản</h3>
+                <details class="course-section">
+                    <summary>
+                        <h3>Phần 2. CSS cơ bản</h3>
+                    </summary>
                     <ul class="course-list">
                         <li>Giới thiệu phần 2</li>
                         <li>Bài 4. Giới thiệu về CSS (Phần 1) <span class="quiz-tag">Quiz 📝</span></li>
@@ -1595,10 +1674,12 @@
                         <li>Slide tổng kết: Làm chủ giao diện Web với CSS: Styling, Box Model & Positioning</li>
                         <li>Chia sẻ của học viên về nội dung phần 2</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="course-section">
-                    <h3>Phần 3. Layout (sắp đặt) cho website của bạn</h3>
+                <details class="course-section">
+                    <summary>
+                        <h3>Phần 3. Layout (sắp đặt) cho website của bạn</h3>
+                    </summary>
                     <ul class="course-list">
                         <li>Giới thiệu phần 3</li>
                         <li>Bài 8. Layout cơ bản <span class="quiz-tag">Quiz 📝</span></li>
@@ -1609,10 +1690,12 @@
                         <li>Slide tổng kết: Làm chủ Layout: Từ Float truyền thống đến Flexbox & CSS Grid hiện đại</li>
                         <li>Chia sẻ của học viên về nội dung phần 3</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="course-section">
-                    <h3>Phần 4. Xây dựng web responsive - Đưa website lên mạng</h3>
+                <details class="course-section">
+                    <summary>
+                        <h3>Phần 4. Xây dựng web responsive - Đưa website lên mạng</h3>
+                    </summary>
                     <ul class="course-list">
                         <li>Giới thiệu phần 4</li>
                         <li>Bài 11. Responsive Web Design <span class="quiz-tag">Quiz 📝</span></li>
@@ -1622,10 +1705,12 @@
                         <li class="special-item">Tổng kết phần 4</li>
                         <li>Chia sẻ của học viên về nội dung phần 4</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="course-section">
-                    <h3>Phần 5. JavaScript cơ bản</h3>
+                <details class="course-section">
+                    <summary>
+                        <h3>Phần 5. JavaScript cơ bản</h3>
+                    </summary>
                     <ul class="course-list">
                         <li>Giới thiệu phần 5</li>
                         <li>Bài 14. Làm quen với JavaScript <span class="quiz-tag">Quiz 📝</span></li>
@@ -1641,23 +1726,35 @@
                         <li>Slide tổng kết: Thao tác DOM và Xử lý Sự kiện (Events)</li>
                         <li>Chia sẻ của học viên về nội dung phần 5</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="course-section">
-                    <h3>Kết thúc khóa học</h3>
+                <details class="course-section">
+                    <summary>
+                        <h3>Kết thúc khóa học</h3>
+                    </summary>
                     <ul class="course-list">
                         <li>Nội dung chia sẻ từ học viên</li>
                         <li>Nguồn học liệu và tài liệu đọc thêm</li>
                         <li>Khảo sát đánh giá môn học dành cho học viên</li>
                     </ul>
                     <div class="end-course">🎉 Chúc mừng hoàn thành khóa học! 🎉</div>
-                </div>
+                </details>
             </div>
         </div>
         
     </div>
     
     <script>
+        function toggleAllDetails(state) {
+            document.querySelectorAll('details.course-section').forEach(detail => {
+                if(state) {
+                    detail.setAttribute('open', '');
+                } else {
+                    detail.removeAttribute('open');
+                }
+            });
+        }
+
         // Tab switching logic
         function switchTab(tabId) {
             // Update buttons
