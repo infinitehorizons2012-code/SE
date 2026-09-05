@@ -221,6 +221,19 @@
             color: var(--text-primary);
         }
         
+        .credit-badge {
+            display: inline-block;
+            padding: 0.1rem 0.4rem;
+            background-color: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #475569;
+            text-align: center;
+            min-width: 20px;
+        }
+        
         .date-box {
             background-color: #f1f5f9;
             padding: 0.4rem 0.6rem;
@@ -578,6 +591,7 @@
                             <th>Kỳ</th>
                             <th>Mã môn</th>
                             <th>Tên môn</th>
+                            <th>Tín chỉ</th>
                             <th>Tình trạng</th>
                             <th>Bắt đầu</th>
                             <th>Kết thúc</th>
@@ -594,6 +608,7 @@
                             <td><span class="cert-badge cc-CC126">CC1</span></td>
                             <td><a href="javascript:void(0)" onclick="switchTab('course-web101x')" class="course-code" style="text-decoration: underline;">WEB101x_2.2-A_VN</a></td>
                             <td><a href="javascript:void(0)" onclick="switchTab('course-web101x')" class="course-name" style="text-decoration: none;">Xây dựng Website đầu tiên</a></td>
+                            <td style="text-align: center;"><span class="credit-badge">3</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">04/09</div>
@@ -632,6 +647,7 @@
                             <td><span class="cert-badge cc-CC126">CC1</span></td>
                             <td><span class="course-code">SWE101x_VN</span></td>
                             <td><span class="course-name">Giới thiệu Khoa học máy tính tích hợp AI</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">16/10</div>
@@ -670,6 +686,7 @@
                             <td><span class="cert-badge cc-CC126">CC1</span></td>
                             <td><span class="course-code">IOT301x_1.1-A_VN</span></td>
                             <td><span class="course-name">Lập trình C cơ bản</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">27/11</div>
@@ -708,6 +725,7 @@
                             <td><span class="cert-badge cc-CC126">CC1</span></td>
                             <td><span class="course-code">OSM201x.4.0.VN</span></td>
                             <td><span class="course-name">Hệ điều hành</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">08/01</div>
@@ -746,6 +764,7 @@
                             <td><span class="cert-badge cc-CC126">CC1</span></td>
                             <td><span class="course-code">đang cập nhật</span></td>
                             <td><span class="course-name">Thiết kế giao diện người dùng với AI</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-missing">Chưa có</span></td>
                             <td>
                                 <div class="date-box">19/02</div>
@@ -784,6 +803,7 @@
                             <td><span class="cert-badge cc-CC226">CC2</span></td>
                             <td><span class="course-code">PRO192x.3.1.VN</span></td>
                             <td><span class="course-name">Lập trình hướng đối tượng với Java</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">02/04</div>
@@ -822,6 +842,7 @@
                             <td><span class="cert-badge cc-CC226">CC2</span></td>
                             <td><span class="course-code">LAB101x_03-A_VN</span></td>
                             <td><span class="course-name">Thực hành lập trình Java Lab</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">14/05</div>
@@ -860,6 +881,7 @@
                             <td><span class="cert-badge cc-CC226">CC2</span></td>
                             <td><span class="course-code">MAD101x.3.0.VN</span></td>
                             <td><span class="course-name">Toán rời rạc</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">25/06</div>
@@ -898,6 +920,7 @@
                             <td><span class="cert-badge cc-CC226">CC2</span></td>
                             <td><span class="course-code">CSD201x_02-A_VN</span></td>
                             <td><span class="course-name">Cấu trúc dữ liệu và giải thuật</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">06/08</div>
@@ -936,6 +959,7 @@
                             <td><span class="cert-badge cc-CC226">CC2</span></td>
                             <td><span class="course-code">NTW201x_2.2-A_VN</span></td>
                             <td><span class="course-name">Mạng Máy tính</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">17/09</div>
@@ -974,6 +998,7 @@
                             <td><span class="cert-badge cc-CC326">CC3</span></td>
                             <td><span class="course-code">DBI202x.3.0.VN</span></td>
                             <td><span class="course-name">Các hệ cơ sở dữ liệu</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">29/10</div>
@@ -1012,6 +1037,7 @@
                             <td><span class="cert-badge cc-CC326">CC3</span></td>
                             <td><span class="course-code">PRJ321x</span></td>
                             <td><span class="course-name">Phát triển ứng dụng web với AI</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-missing">Chưa có</span></td>
                             <td>
                                 <div class="date-box">10/12</div>
@@ -1050,6 +1076,7 @@
                             <td><span class="cert-badge cc-CC326">CC3</span></td>
                             <td><span class="course-code">SWE102x_03-A_VN</span></td>
                             <td><span class="course-name">Nhập môn kỹ thuật phần mềm</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">21/01</div>
@@ -1088,6 +1115,7 @@
                             <td><span class="cert-badge cc-CC326">CC3</span></td>
                             <td><span class="course-code">MAS291x_1.2-A_VN</span></td>
                             <td><span class="course-name">Xác suất thống kê</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">03/03</div>
@@ -1126,6 +1154,7 @@
                             <td><span class="cert-badge cc-CC326">CC3</span></td>
                             <td><span class="course-code">PRM391x</span></td>
                             <td><span class="course-name">Lập trình di động</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-missing">Chưa có</span></td>
                             <td>
                                 <div class="date-box">14/04</div>
@@ -1164,6 +1193,7 @@
                             <td><span class="cert-badge cc-CC426">CC4</span></td>
                             <td><span class="course-code">đang cập nhật</span></td>
                             <td><span class="course-name">Yêu cầu phần mềm với AI hỗ trợ</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-missing">Chưa có</span></td>
                             <td>
                                 <div class="date-box">26/05</div>
@@ -1202,6 +1232,7 @@
                             <td><span class="cert-badge cc-CC426">CC4</span></td>
                             <td><span class="course-code">đang cập nhật</span></td>
                             <td><span class="course-name">Kiến trúc và Thiết kế phần mềm với AI</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-missing">Chưa có</span></td>
                             <td>
                                 <div class="date-box">07/07</div>
@@ -1240,6 +1271,7 @@
                             <td><span class="cert-badge cc-CC426">CC4</span></td>
                             <td><span class="course-code">đang cập nhật</span></td>
                             <td><span class="course-name">Đảm bảo chất lượng và kiểm thử phần mềm với AI</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-missing">Chưa có</span></td>
                             <td>
                                 <div class="date-box">18/08</div>
@@ -1278,6 +1310,7 @@
                             <td><span class="cert-badge cc-CC426">CC4</span></td>
                             <td><span class="course-code">đang cập nhật</span></td>
                             <td><span class="course-name">Quản trị dự án phần mềm với AI</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-missing">Chưa có</span></td>
                             <td>
                                 <div class="date-box">29/09</div>
@@ -1316,6 +1349,7 @@
                             <td><span class="cert-badge cc-CC426">CC4</span></td>
                             <td><span class="course-code">đang cập nhật</span></td>
                             <td><span class="course-name">Bảo mật và an ninh trí tuệ nhân tạo</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-missing">Chưa có</span></td>
                             <td>
                                 <div class="date-box">10/11</div>
@@ -1354,6 +1388,7 @@
                             <td><span class="cert-badge cc-CC426">CC4</span></td>
                             <td><span class="course-code">đang cập nhật</span></td>
                             <td><span class="course-name">Dự án phát triển ứng dụng với AI</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-missing">Chưa có</span></td>
                             <td>
                                 <div class="date-box">22/12</div>
@@ -1392,6 +1427,7 @@
                             <td><span class="cert-badge cc-CC526">CC5</span></td>
                             <td><span class="course-code">OJT201x.1.0.VN</span></td>
                             <td><span class="course-name">Đào tạo trong môi trường thực tế</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-assigned">Đã gán</span></td>
                             <td>
                                 <div class="date-box">02/02</div>
@@ -1430,6 +1466,7 @@
                             <td><span class="cert-badge cc-CC526">CC5</span></td>
                             <td><ul class='options-list'><li><strong>CEA201x</strong></li><li><strong>MAA101x</strong></li><li><strong>MAC101x</strong></li><li><strong>ITE302x.4.0.VN</strong></li></ul></td>
                             <td><ul class='options-list'><li>Tổ chức và kiến trúc máy tính</li><li>Đại số tuyến tính</li><li>Giải tích</li><li>Đạo đức trong CNTT</li></ul></td>
+                            <td style="text-align: center;"><ul class='options-list'><li><span class='credit-badge'>-</span></li><li><span class='credit-badge'>-</span></li><li><span class='credit-badge'>-</span></li><li><span class='credit-badge'>-</span></li></ul></td>
                             <td><ul class='options-list'><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-assigned">Đã gán</span></li></ul></td>
                             <td>
                                 <div class="date-box">16/03</div>
@@ -1468,6 +1505,7 @@
                             <td><span class="cert-badge cc-CC526">CC5</span></td>
                             <td><span class="course-code">CSP101x</span></td>
                             <td><span class="course-name">Kỹ thuật lập trình C#</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-requesting">Đang xin cấp</span></td>
                             <td>
                                 <div class="date-box">27/04</div>
@@ -1506,6 +1544,7 @@
                             <td><span class="cert-badge cc-CC526">CC5</span></td>
                             <td><span class="course-code">PRC391x</span></td>
                             <td><span class="course-name">Điện toán đám mây</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-requesting">Đang xin cấp</span></td>
                             <td>
                                 <div class="date-box">08/06</div>
@@ -1544,6 +1583,7 @@
                             <td><span class="cert-badge cc-CC526">CC5</span></td>
                             <td><span class="course-code">DSP301x</span></td>
                             <td><span class="course-name">Giới thiệu về Khoa học Dữ liệu</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-requesting">Đang xin cấp</span></td>
                             <td>
                                 <div class="date-box">20/07</div>
@@ -1582,6 +1622,7 @@
                             <td><span class="cert-badge cc-CC526">CC5</span></td>
                             <td><span class="course-code">PTS101x</span></td>
                             <td><span class="course-name">Xử lý hình ảnh với Photoshop</span></td>
+                            <td style="text-align: center;"><span class="credit-badge">-</span></td>
                             <td><span class="status-badge status-requesting">Đang xin cấp</span></td>
                             <td>
                                 <div class="date-box">31/08</div>
