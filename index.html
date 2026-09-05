@@ -32,7 +32,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: 0 auto;
         }
 
@@ -54,6 +54,21 @@
             color: var(--text-secondary);
             font-size: 1.1rem;
         }
+        
+        /* Chú thích màu sắc cho ô vuông tuần */
+        .legend-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
         .table-container {
             background-color: var(--surface-color);
@@ -71,7 +86,7 @@
 
         th {
             background-color: #f8fafc;
-            padding: 1rem 1.5rem;
+            padding: 1rem 1.25rem;
             font-weight: 600;
             color: var(--text-secondary);
             text-transform: uppercase;
@@ -81,7 +96,7 @@
         }
 
         td {
-            padding: 1.25rem 1.5rem;
+            padding: 1.25rem 1.25rem;
             border-bottom: 1px solid var(--border-color);
             vertical-align: middle;
         }
@@ -184,11 +199,61 @@
             flex-direction: column;
             gap: 4px;
         }
+        
+        /* Tiến độ 6 tuần */
+        .progress-weeks {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 140px;
+        }
+        .week-box {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background-color: #e2e8f0; /* Default future */
+            border: 1px solid #cbd5e1;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        /* Môn đã qua */
+        .week-past {
+            background-color: #10b981;
+            border-color: #059669;
+        }
+        /* Môn đang diễn ra */
+        .week-current {
+            background-color: #f59e0b;
+            border-color: #d97706;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        /* Tooltip cho các ô vuông */
+        .week-box[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1e293b;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.7; transform: scale(1.1); }
+        }
 
         @media (max-width: 768px) {
             body { padding: 1rem; }
             td, th { padding: 1rem; }
             .date-box { display: block; margin-bottom: 0.25rem; }
+            .legend-container { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
@@ -199,6 +264,18 @@
             <p class="subtitle">Chương trình đào tạo Kỹ sư Phần mềm (Hình 1) - Dự kiến 6 tuần/môn</p>
         </header>
 
+        <div class="legend-container">
+            <div class="legend-item">
+                <div class="week-box week-past"></div> Đã hoàn thành
+            </div>
+            <div class="legend-item">
+                <div class="week-box week-current"></div> Đang học (Tuần hiện tại)
+            </div>
+            <div class="legend-item">
+                <div class="week-box"></div> Chưa học
+            </div>
+        </div>
+
         <div class="table-container">
             <table>
                 <thead>
@@ -208,6 +285,7 @@
                         <th>Thông tin môn học</th>
                         <th>Ngày bắt đầu</th>
                         <th>Ngày kết thúc</th>
+                        <th>Tiến độ (6 Tuần)</th>
                         <th>Vào lớp</th>
                     </tr>
                 </thead>
@@ -225,6 +303,11 @@
                         </td>
                         <td>
                             <div class="date-box">15/10/2026</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2026-09-04">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+WEB101x_2.2-A_VN+0822.CCDN/info" target="_blank" class="action-link">Học ngay</a>
@@ -245,6 +328,11 @@
                             <div class="date-box">26/11/2026</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2026-10-16">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+SWE101x_VN+0826/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
@@ -261,6 +349,11 @@
                         </td>
                         <td>
                             <div class="date-box">07/01/2027</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2026-11-27">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+IOT301x_1.1-A_VN+2022_T11/info" target="_blank" class="action-link">Học ngay</a>
@@ -281,6 +374,11 @@
                             <div class="date-box">18/02/2027</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2027-01-08">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+OSM201x.4.0.VN+1222.SE/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
@@ -297,6 +395,11 @@
                         </td>
                         <td>
                             <div class="date-box">01/04/2027</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2027-02-19">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <span class="action-link link-disabled">Chưa mở</span>
@@ -317,6 +420,11 @@
                             <div class="date-box">13/05/2027</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2027-04-02">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+PRO192x.3.1.VN+1022.SE.DN/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
@@ -333,6 +441,11 @@
                         </td>
                         <td>
                             <div class="date-box">24/06/2027</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2027-05-14">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+LAB101x_03-A_VN+2021_T2/info" target="_blank" class="action-link">Học ngay</a>
@@ -353,6 +466,11 @@
                             <div class="date-box">05/08/2027</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2027-06-25">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+MAD101x.3.0.VN+0423.SE/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
@@ -369,6 +487,11 @@
                         </td>
                         <td>
                             <div class="date-box">16/09/2027</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2027-08-06">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+CSD201x_02-A_VN+2020_T5/info" target="_blank" class="action-link">Học ngay</a>
@@ -389,6 +512,11 @@
                             <div class="date-box">28/10/2027</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2027-09-17">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+NTW201x_2.2-A_VN+2022_T4/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
@@ -405,6 +533,11 @@
                         </td>
                         <td>
                             <div class="date-box">09/12/2027</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2027-10-29">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+DBI202x.3.0.VN+1122.SE/info" target="_blank" class="action-link">Học ngay</a>
@@ -425,6 +558,11 @@
                             <div class="date-box">20/01/2028</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2027-12-10">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
@@ -441,6 +579,11 @@
                         </td>
                         <td>
                             <div class="date-box">02/03/2028</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2028-01-21">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+SWE102x_03-A_VN+2022_T8/info" target="_blank" class="action-link">Học ngay</a>
@@ -461,6 +604,11 @@
                             <div class="date-box">13/04/2028</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2028-03-03">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+MAS291x_1.2-A_VN+2021_T5/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
@@ -477,6 +625,11 @@
                         </td>
                         <td>
                             <div class="date-box">25/05/2028</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2028-04-14">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <span class="action-link link-disabled">Chưa mở</span>
@@ -497,6 +650,11 @@
                             <div class="date-box">06/07/2028</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2028-05-26">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
@@ -513,6 +671,11 @@
                         </td>
                         <td>
                             <div class="date-box">17/08/2028</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2028-07-07">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <span class="action-link link-disabled">Chưa mở</span>
@@ -533,6 +696,11 @@
                             <div class="date-box">28/09/2028</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2028-08-18">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
@@ -549,6 +717,11 @@
                         </td>
                         <td>
                             <div class="date-box">09/11/2028</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2028-09-29">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <span class="action-link link-disabled">Chưa mở</span>
@@ -569,6 +742,11 @@
                             <div class="date-box">21/12/2028</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2028-11-10">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
@@ -585,6 +763,11 @@
                         </td>
                         <td>
                             <div class="date-box">01/02/2029</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2028-12-22">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
                         </td>
                         <td>
                             <span class="action-link link-disabled">Chưa mở</span>
@@ -605,6 +788,11 @@
                             <div class="date-box">15/03/2029</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2029-02-02">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+OJT201x.1.0.VN+0223.SE/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
@@ -623,6 +811,11 @@
                             <div class="date-box">26/04/2029</div>
                         </td>
                         <td>
+                            <div class="progress-weeks" data-start="2029-03-16">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <div class='buttons-group'><span class="action-link-small link-disabled">CEA201x (Chưa mở)</span><span class="action-link-small link-disabled">MAA101x (Chưa mở)</span><span class="action-link-small link-disabled">MAC101x (Chưa mở)</span><a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+ITE302x.4.0.VN+1022.CC5.SE/info" target="_blank" class="action-link-small">Vào ITE302x</a></div>
                         </td>
                     </tr>
@@ -631,5 +824,60 @@
             </table>
         </div>
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy ngày hiện tại
+            const today = new Date();
+            
+            // Xoá dòng này nếu muốn test (ví dụ set ngày hiện tại là 01/10/2026)
+            // const today = new Date("2026-10-01"); 
+            
+            document.querySelectorAll('.progress-weeks').forEach(container => {
+                const startDateStr = container.getAttribute('data-start');
+                const startDate = new Date(startDateStr);
+                const boxes = container.querySelectorAll('.week-box');
+                
+                // Reset time to midnight for accurate day calculation
+                startDate.setHours(0, 0, 0, 0);
+                const todayMidnight = new Date(today);
+                todayMidnight.setHours(0, 0, 0, 0);
+                
+                // Tính số ngày chênh lệch
+                const diffTime = todayMidnight - startDate;
+                const diffDays = diffTime / (1000 * 60 * 60 * 24);
+                
+                let currentWeekIndex = -1;
+                if (diffDays >= 0) {
+                    currentWeekIndex = Math.floor(diffDays / 7);
+                }
+                
+                boxes.forEach((box, index) => {
+                    // Xóa các class mặc định
+                    box.classList.remove('week-past', 'week-current', 'week-future');
+                    
+                    if (diffDays < 0) {
+                        // Chưa bắt đầu
+                    } else if (index < currentWeekIndex) {
+                        // Tuần đã qua
+                        box.classList.add('week-past');
+                    } else if (index === currentWeekIndex) {
+                        // Tuần hiện tại
+                        box.classList.add('week-current');
+                    } else {
+                        // Tuần tương lai của môn đang học
+                    }
+                });
+                
+                // Nếu môn học đã kết thúc hoàn toàn (đã qua 6 tuần = 42 ngày)
+                if (diffDays >= 42) {
+                     boxes.forEach(box => {
+                         box.classList.remove('week-current');
+                         box.classList.add('week-past');
+                     });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
