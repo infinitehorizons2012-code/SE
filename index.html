@@ -1468,12 +1468,15 @@
                 // Độ trễ/sớm = Số ngày user đã học - Số ngày dự kiến lẽ ra phải trôi qua
                 const diff = actualDays - diffDays;
                 
+                // Quy đổi sang tuần (làm tròn 1 chữ số thập phân)
+                const diffWeeks = Math.round(diff / 7 * 10) / 10;
+                
                 if (diff > 0) {
                     evalBox.className = 'eval-box eval-fast';
-                    evalBox.innerHTML = 'Nhanh ' + diff + ' ngày';
+                    evalBox.innerHTML = 'Nhanh ' + diffWeeks + ' tuần';
                 } else if (diff < 0) {
                     evalBox.className = 'eval-box eval-slow';
-                    evalBox.innerHTML = 'Chậm ' + Math.abs(diff) + ' ngày';
+                    evalBox.innerHTML = 'Chậm ' + Math.abs(diffWeeks) + ' tuần';
                 } else {
                     evalBox.className = 'eval-box eval-ontrack';
                     evalBox.innerHTML = 'Đúng tiến độ';
