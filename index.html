@@ -62,6 +62,7 @@
             margin-bottom: 1.5rem;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 0;
+            flex-wrap: wrap;
         }
         
         .tab-btn {
@@ -355,7 +356,7 @@
         .course-detail-container {
             background-color: var(--surface-color);
             border-radius: 10px;
-            padding: 2rem;
+            padding: 2.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--border-color);
             max-width: 900px;
@@ -366,31 +367,37 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
         }
         .course-header h2 {
             margin: 0;
             font-size: 1.8rem;
             color: var(--text-primary);
+            line-height: 1.3;
         }
         .course-btn {
             background-color: #0275d8;
             color: white;
-            padding: 0.5rem 1.5rem;
+            padding: 0.6rem 1.5rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
+            white-space: nowrap;
+            margin-left: 1rem;
         }
         .course-section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         .course-section h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--text-primary);
             margin-bottom: 1rem;
-            border-left: 4px solid var(--primary-color);
-            padding-left: 10px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            background-color: #f8fafc;
+            padding: 0.8rem 0.8rem 0.8rem 12px;
+            border-radius: 0 4px 4px 0;
         }
         .course-list {
             list-style: none;
@@ -398,11 +405,15 @@
             margin: 0;
         }
         .course-list li {
-            padding: 0.8rem;
+            padding: 0.8rem 1rem;
             border-bottom: 1px solid #f1f5f9;
             color: #334155;
             display: flex;
             align-items: center;
+            font-size: 0.95rem;
+        }
+        .course-list li:last-child {
+            border-bottom: none;
         }
         .course-list li::before {
             content: "•";
@@ -413,23 +424,47 @@
             margin-left: -1em;
             margin-right: 0.5rem;
         }
+        .course-list li.special-item {
+            color: #0f172a;
+            font-weight: 500;
+            background-color: #f8fafc;
+            border-radius: 6px;
+            margin-top: 5px;
+        }
+        .course-list li.special-item::before {
+            content: "▶";
+            color: #0275d8;
+        }
         .quiz-tag {
-            background-color: #f1f5f9;
-            color: #475569;
+            background-color: #e0f2fe;
+            color: #0369a1;
             font-size: 0.75rem;
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
             margin-left: 10px;
             font-weight: 600;
+            border: 1px solid #bae6fd;
         }
-        .incomplete-notice {
-            background-color: #fef08a;
-            color: #854d0e;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 2rem;
+        .assignment-tag {
+            background-color: #ffedd5;
+            color: #c2410c;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 10px;
+            font-weight: 600;
+            border: 1px solid #fed7aa;
+        }
+        .end-course {
             text-align: center;
-            font-style: italic;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            color: #166534;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border: 1px solid #86efac;
         }
 
         @media (max-width: 768px) {
@@ -438,6 +473,8 @@
             .tabs-nav { flex-direction: column; gap: 0; }
             .tab-btn { border-bottom: 1px solid var(--border-color); text-align: left; }
             .tab-btn.active { border-left: 4px solid var(--primary-color); border-bottom: 1px solid var(--border-color); }
+            .course-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .course-btn { margin-left: 0; }
         }
     </style>
 </head>
@@ -1519,7 +1556,7 @@
         <div id="course-web101x" class="tab-content">
             <div class="course-detail-container">
                 <div class="course-header">
-                    <h2>WEB101x: Xây dựng Website đầu tiên</h2>
+                    <h2>WEB101x_2.2-A_VN<br>Xây dựng Website đầu tiên</h2>
                     <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+WEB101x_2.2-A_VN+0822.CCDN/course/" target="_blank" class="course-btn">Resume Course</a>
                 </div>
                 
@@ -1538,12 +1575,82 @@
                         <li>Giới thiệu phần 1</li>
                         <li>Bài 1. Giới thiệu về lập trình web <span class="quiz-tag">Quiz 📝</span></li>
                         <li>Bài 2. Giới thiệu về HTML <span class="quiz-tag">Quiz 📝</span></li>
-                        <li>Bài 3. Các thẻ HTML phổ biến</li>
+                        <li>Bài 3. Các thẻ HTML phổ biến <span class="quiz-tag">Quiz 📝</span></li>
+                        <li class="special-item">Tổng kết phần 1</li>
+                        <li>Chia sẻ của học viên về nội dung phần 1</li>
+                        <li>Slide tổng kết: Lập trình web với HTML</li>
                     </ul>
                 </div>
-                
-                <div class="incomplete-notice">
-                    ⚠️ <strong>Thông báo:</strong> Bức ảnh bạn tải lên chỉ hiển thị mục lục đến "Bài 3". Để mình cập nhật toàn bộ mục lục của khóa học này, bạn hãy copy toàn bộ text trên trang web đó và gửi vào khung chat nhé!
+
+                <div class="course-section">
+                    <h3>Phần 2. CSS cơ bản</h3>
+                    <ul class="course-list">
+                        <li>Giới thiệu phần 2</li>
+                        <li>Bài 4. Giới thiệu về CSS (Phần 1) <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 5. Giới thiệu về CSS (Phần 2) <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 6. Giới thiệu về CSS (Phần 3) <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 7. Giới thiệu về CSS (Phần 4) & các kỹ năng quan trọng của một Developer <span class="quiz-tag">Quiz 📝</span></li>
+                        <li class="special-item">Tổng kết phần 2</li>
+                        <li>Assignment 01: Xây dựng trang Digital CV <span class="assignment-tag">Assignment 💻</span></li>
+                        <li>Slide tổng kết: Làm chủ giao diện Web với CSS: Styling, Box Model & Positioning</li>
+                        <li>Chia sẻ của học viên về nội dung phần 2</li>
+                    </ul>
+                </div>
+
+                <div class="course-section">
+                    <h3>Phần 3. Layout (sắp đặt) cho website của bạn</h3>
+                    <ul class="course-list">
+                        <li>Giới thiệu phần 3</li>
+                        <li>Bài 8. Layout cơ bản <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 9. Xây dựng layout với CSS Flex-box <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 10. Xây dựng layout với CSS Grid <span class="quiz-tag">Quiz 📝</span></li>
+                        <li class="special-item">Tổng kết phần 3</li>
+                        <li>Assignment 02: Xây dựng website cá nhân <span class="assignment-tag">Assignment 💻</span></li>
+                        <li>Slide tổng kết: Làm chủ Layout: Từ Float truyền thống đến Flexbox & CSS Grid hiện đại</li>
+                        <li>Chia sẻ của học viên về nội dung phần 3</li>
+                    </ul>
+                </div>
+
+                <div class="course-section">
+                    <h3>Phần 4. Xây dựng web responsive - Đưa website lên mạng</h3>
+                    <ul class="course-list">
+                        <li>Giới thiệu phần 4</li>
+                        <li>Bài 11. Responsive Web Design <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 12. Thư viện Bootstrap <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 13. Đưa trang web lên mạng <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Slide tổng kết: CSS Responsive, Thư viện Bootstrap và Triển khai Website</li>
+                        <li class="special-item">Tổng kết phần 4</li>
+                        <li>Chia sẻ của học viên về nội dung phần 4</li>
+                    </ul>
+                </div>
+
+                <div class="course-section">
+                    <h3>Phần 5. JavaScript cơ bản</h3>
+                    <ul class="course-list">
+                        <li>Giới thiệu phần 5</li>
+                        <li>Bài 14. Làm quen với JavaScript <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 15. Toán tử <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 16. Boolean và câu lệnh có điều kiện <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 17. Hàm và mảng <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 18. Object và vòng lặp <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Slide tổng kết: JavaScript Fundamentals: Từ biến đến cấu trúc dữ liệu</li>
+                        <li>Bài 19. DOM and Event - Phần 1 <span class="quiz-tag">Quiz 📝</span></li>
+                        <li>Bài 20. DOM and Event - Phần 2 <span class="quiz-tag">Quiz 📝</span></li>
+                        <li class="special-item">Tổng kết phần 5</li>
+                        <li>Assignment 03: Thiết kế và triển khai một website hoàn chỉnh <span class="assignment-tag">Assignment 💻</span></li>
+                        <li>Slide tổng kết: Thao tác DOM và Xử lý Sự kiện (Events)</li>
+                        <li>Chia sẻ của học viên về nội dung phần 5</li>
+                    </ul>
+                </div>
+
+                <div class="course-section">
+                    <h3>Kết thúc khóa học</h3>
+                    <ul class="course-list">
+                        <li>Nội dung chia sẻ từ học viên</li>
+                        <li>Nguồn học liệu và tài liệu đọc thêm</li>
+                        <li>Khảo sát đánh giá môn học dành cho học viên</li>
+                    </ul>
+                    <div class="end-course">🎉 Chúc mừng hoàn thành khóa học! 🎉</div>
                 </div>
             </div>
         </div>
