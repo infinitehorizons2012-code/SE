@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ Trình Học Tập - Software Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7fb;
+            --surface-color: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --border-color: #e2e8f0;
+            
+            --cc1: #ecfdf5; --cc1-text: #059669;
+            --cc2: #eff6ff; --cc2-text: #2563eb;
+            --cc3: #fef2f2; --cc3-text: #dc2626;
+            --cc4: #fdf4ff; --cc4-text: #c026d3;
+            --cc5: #fffbeb; --cc5-text: #d97706;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .table-container {
+            background-color: var(--surface-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8fafc;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .cc-CC126 { background-color: var(--cc1); color: var(--cc1-text); }
+        .cc-CC226 { background-color: var(--cc2); color: var(--cc2-text); }
+        .cc-CC326 { background-color: var(--cc3); color: var(--cc3-text); }
+        .cc-CC426 { background-color: var(--cc4); color: var(--cc4-text); }
+        .cc-CC526 { background-color: var(--cc5); color: var(--cc5-text); }
+
+        .course-code {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .course-name {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .date-box {
+            background-color: #f1f5f9;
+            padding: 0.5rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .date-box i {
+            color: var(--primary-color);
+        }
+        
+        .date-col {
+            min-width: 130px;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            td, th { padding: 1rem; }
+            .date-col { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lộ Trình Học Tập</h1>
+            <p class="subtitle">Chương trình đào tạo Kỹ sư Phần mềm (Hình 1) - Dự kiến 6 tuần/môn</p>
+        </header>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Chứng chỉ</th>
+                        <th>Thông tin môn học</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">1</td>
+                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td>
+                            <span class="course-code">WEB101x</span>
+                            <span class="course-name">Xây dựng Website đầu tiên</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                04/09/2026
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                15/10/2026
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">2</td>
+                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td>
+                            <span class="course-code">đang cập nhật</span>
+                            <span class="course-name">Giới thiệu Khoa học máy tính tích hợp AI</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                16/10/2026
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                26/11/2026
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">3</td>
+                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td>
+                            <span class="course-code">IOT301x</span>
+                            <span class="course-name">Lập trình C cơ bản</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                27/11/2026
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                07/01/2027
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">4</td>
+                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td>
+                            <span class="course-code">OSM201x</span>
+                            <span class="course-name">Hệ điều hành</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                08/01/2027
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                18/02/2027
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">5</td>
+                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td>
+                            <span class="course-code">đang cập nhật</span>
+                            <span class="course-name">Thiết kế giao diện người dùng với AI</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                19/02/2027
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                01/04/2027
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">6</td>
+                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td>
+                            <span class="course-code">PRO192x</span>
+                            <span class="course-name">Lập trình hướng đối tượng với Java</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                02/04/2027
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                13/05/2027
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">7</td>
+                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td>
+                            <span class="course-code">LAB101x</span>
+                            <span class="course-name">Thực hành lập trình Java Lab</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                14/05/2027
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                24/06/2027
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">8</td>
+                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td>
+                            <span class="course-code">MAD101x</span>
+                            <span class="course-name">Toán rời rạc</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                25/06/2027
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                05/08/2027
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">9</td>
+                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td>
+                            <span class="course-code">CSD201x</span>
+                            <span class="course-name">Cấu trúc dữ liệu và giải thuật</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                06/08/2027
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                16/09/2027
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">10</td>
+                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td>
+                            <span class="course-code">NTW201x</span>
+                            <span class="course-name">Mạng Máy tính</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                17/09/2027
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                28/10/2027
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">11</td>
+                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td>
+                            <span class="course-code">DBI202x</span>
+                            <span class="course-name">Các hệ cơ sở dữ liệu</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                29/10/2027
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                09/12/2027
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">12</td>
+                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td>
+                            <span class="course-code">PRJ321x</span>
+                            <span class="course-name">Phát triển ứng dụng web với AI</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                10/12/2027
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                20/01/2028
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">13</td>
+                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td>
+                            <span class="course-code">SWE102x</span>
+                            <span class="course-name">Nhập môn kỹ thuật phần mềm</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                21/01/2028
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                02/03/2028
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">14</td>
+                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td>
+                            <span class="course-code">MAS291x</span>
+                            <span class="course-name">Xác suất thống kê</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                03/03/2028
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                13/04/2028
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">15</td>
+                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td>
+                            <span class="course-code">PRM391x</span>
+                            <span class="course-name">Lập trình di động</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                14/04/2028
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                25/05/2028
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">16</td>
+                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td>
+                            <span class="course-code">đang cập nhật</span>
+                            <span class="course-name">Yêu cầu phần mềm với AI hỗ trợ</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                26/05/2028
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                06/07/2028
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">17</td>
+                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td>
+                            <span class="course-code">đang cập nhật</span>
+                            <span class="course-name">Kiến trúc và Thiết kế phần mềm với AI</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                07/07/2028
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                17/08/2028
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">18</td>
+                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td>
+                            <span class="course-code">đang cập nhật</span>
+                            <span class="course-name">Đảm bảo chất lượng và kiểm thử phần mềm với AI</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                18/08/2028
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                28/09/2028
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">19</td>
+                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td>
+                            <span class="course-code">đang cập nhật</span>
+                            <span class="course-name">Quản trị dự án phần mềm với AI</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                29/09/2028
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                09/11/2028
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">20</td>
+                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td>
+                            <span class="course-code">đang cập nhật</span>
+                            <span class="course-name">Bảo mật và an ninh trí tuệ nhân tạo</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                10/11/2028
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                21/12/2028
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">21</td>
+                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td>
+                            <span class="course-code">đang cập nhật</span>
+                            <span class="course-name">Dự án phát triển ứng dụng với AI</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                22/12/2028
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                01/02/2029
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">22</td>
+                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td>
+                            <span class="course-code">OJT201x</span>
+                            <span class="course-name">Đào tạo trong môi trường thực tế</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                02/02/2029
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                15/03/2029
+                            </div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">23</td>
+                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td>
+                            <span class="course-code">Môn tự chọn</span>
+                            <span class="course-name">Môn tự chọn (VD: CEA201x, MAA101x, MAC101x, ITE302x)</span>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                16/03/2029
+                            </div>
+                        </td>
+                        <td class="date-col">
+                            <div class="date-box">
+                                26/04/2029
+                            </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
