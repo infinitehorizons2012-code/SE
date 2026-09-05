@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lộ Trình Học Tập - Software Engineering</title>
+    <title>Lộ Trình Học Tập & Theo Dõi Tiến Độ - Software Engineering</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -27,22 +27,22 @@
             background-color: var(--bg-color);
             color: var(--text-primary);
             margin: 0;
-            padding: 2rem;
-            line-height: 1.5;
+            padding: 1.5rem;
+            line-height: 1.4;
         }
 
         .container {
-            max-width: 1450px;
+            max-width: 98%;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             background: linear-gradient(135deg, #4f46e5, #ec4899);
@@ -52,28 +52,29 @@
 
         p.subtitle {
             color: var(--text-secondary);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .legend-container {
             display: flex;
             justify-content: flex-end;
-            gap: 1.5rem;
+            gap: 1.2rem;
             margin-bottom: 1rem;
             font-size: 0.85rem;
             color: var(--text-secondary);
+            flex-wrap: wrap;
         }
         .legend-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .table-container {
             background-color: var(--surface-color);
-            border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow-x: auto;
             border: 1px solid var(--border-color);
         }
 
@@ -81,23 +82,26 @@
             width: 100%;
             border-collapse: collapse;
             text-align: left;
+            min-width: 1200px; /* Ensure it doesn't squish too much */
         }
 
         th {
             background-color: #f8fafc;
-            padding: 1rem 1.25rem;
+            padding: 0.75rem;
             font-weight: 600;
             color: var(--text-secondary);
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+            letter-spacing: 0.02em;
             border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
         }
 
         td {
-            padding: 1.25rem 1.25rem;
+            padding: 0.75rem;
             border-bottom: 1px solid var(--border-color);
             vertical-align: middle;
+            font-size: 0.9rem;
         }
 
         tr:last-child td {
@@ -110,17 +114,17 @@
 
         .cert-badge {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 9999px;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             font-weight: 600;
             text-align: center;
         }
         
         .status-badge {
             display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 6px;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
             font-size: 0.75rem;
             font-weight: 600;
             text-align: center;
@@ -148,7 +152,7 @@
         
         @keyframes requestPulse {
             0% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0.7); }
-            70% { box-shadow: 0 0 0 6px rgba(253, 224, 71, 0); }
+            70% { box-shadow: 0 0 0 4px rgba(253, 224, 71, 0); }
             100% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0); }
         }
         
@@ -162,6 +166,7 @@
             font-weight: 600;
             color: var(--primary-color);
             display: block;
+            font-size: 0.85rem;
         }
 
         .course-name {
@@ -171,9 +176,9 @@
         
         .date-box {
             background-color: #f1f5f9;
-            padding: 0.5rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
             color: var(--text-secondary);
             display: inline-block;
             white-space: nowrap;
@@ -181,12 +186,12 @@
         
         .action-link {
             display: inline-block;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.875rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: background-color 0.2s;
             text-align: center;
@@ -195,7 +200,7 @@
         
         .action-link-small {
             display: inline-block;
-            padding: 0.25rem 0.5rem;
+            padding: 0.2rem 0.4rem;
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
@@ -205,7 +210,7 @@
             margin: 0.1rem 0;
             transition: background-color 0.2s;
             text-align: center;
-            width: 90px;
+            width: 80px;
         }
 
         .action-link:hover, .action-link-small:hover {
@@ -221,29 +226,28 @@
         
         .options-list {
             margin: 0;
-            padding-left: 20px;
+            padding-left: 15px;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         .options-list li {
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
         .buttons-group {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 2px;
         }
         
         .progress-weeks {
             display: flex;
-            gap: 6px;
+            gap: 4px;
             align-items: center;
-            flex-wrap: wrap;
-            max-width: 140px;
+            flex-wrap: nowrap; /* Force 1 line */
         }
         .week-box {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             border-radius: 4px;
             background-color: #e2e8f0;
             border: 1px solid #cbd5e1;
@@ -262,17 +266,46 @@
         .week-box[title]:hover::after {
             content: attr(title);
             position: absolute;
-            bottom: 25px;
+            bottom: 22px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #1e293b;
             color: white;
-            padding: 4px 8px;
+            padding: 3px 6px;
             border-radius: 4px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             white-space: nowrap;
             z-index: 10;
         }
+        
+        /* Dropdown Tiến độ */
+        .progress-select {
+            padding: 0.3rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background-color: #f8fafc;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            outline: none;
+            cursor: pointer;
+        }
+        .progress-select:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* Đánh giá */
+        .eval-box {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .eval-done { background-color: #dcfce7; color: #166534; }
+        .eval-fast { background-color: #dbeafe; color: #1e40af; }
+        .eval-slow { background-color: #fee2e2; color: #991b1b; }
+        .eval-ontrack { background-color: #f1f5f9; color: #475569; }
 
         @keyframes pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
@@ -281,39 +314,25 @@
 
         @media (max-width: 768px) {
             body { padding: 1rem; }
-            td, th { padding: 1rem; }
-            .date-box { display: block; margin-bottom: 0.25rem; }
-            .legend-container { flex-wrap: wrap; justify-content: center; }
+            .legend-container { flex-wrap: wrap; justify-content: flex-start; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Lộ Trình Học Tập & Quản Lý Tài Khoản</h1>
-            <p class="subtitle">Chương trình đào tạo Kỹ sư Phần mềm (Hình 1) - Đối chiếu với tài khoản học</p>
+            <h1>Lộ Trình Học Tập & Theo Dõi Tiến Độ</h1>
+            <p class="subtitle">Bảng điều khiển học tập cá nhân (Dữ liệu tiến độ được lưu trực tiếp trên trình duyệt của bạn)</p>
         </header>
 
         <div class="legend-container">
-            <div class="legend-item">
-                <span class="status-badge status-assigned">Đã gán trên tài khoản</span>
-            </div>
-            <div class="legend-item">
-                <span class="status-badge status-missing">Chưa có trên hệ thống</span>
-            </div>
-            <div class="legend-item">
-                <span class="status-badge status-requesting">Đang xin cấp quyền</span>
-            </div>
-            <div style="width: 20px;"></div>
-            <div class="legend-item">
-                <div class="week-box week-past"></div> Đã hoàn thành
-            </div>
-            <div class="legend-item">
-                <div class="week-box week-current"></div> Đang học
-            </div>
-            <div class="legend-item">
-                <div class="week-box"></div> Chưa học
-            </div>
+            <div class="legend-item"><span class="status-badge status-assigned">Đã gán</span></div>
+            <div class="legend-item"><span class="status-badge status-missing">Chưa có</span></div>
+            <div class="legend-item"><span class="status-badge status-requesting">Đang xin cấp</span></div>
+            <div style="width: 15px;"></div>
+            <div class="legend-item"><div class="week-box week-past"></div> Đã qua</div>
+            <div class="legend-item"><div class="week-box week-current"></div> Đang học</div>
+            <div class="legend-item"><div class="week-box"></div> Chưa học</div>
         </div>
 
         <div class="table-container">
@@ -321,13 +340,15 @@
                 <thead>
                     <tr>
                         <th>STT</th>
-                        <th>Chứng chỉ</th>
+                        <th>Kỳ</th>
                         <th>Mã môn</th>
                         <th>Tên môn</th>
                         <th>Tình trạng</th>
-                        <th>Ngày bắt đầu</th>
-                        <th>Ngày kết thúc</th>
-                        <th>Tiến độ</th>
+                        <th>Bắt đầu</th>
+                        <th>Kết thúc</th>
+                        <th>Lịch trình</th>
+                        <th>Thực tế</th>
+                        <th>Đánh giá</th>
                         <th>Vào lớp</th>
                     </tr>
                 </thead>
@@ -335,12 +356,12 @@
 
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">1</td>
-                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td><span class="cert-badge cc-CC126">CC1</span></td>
                         <td><span class="course-code">WEB101x_2.2-A_VN</span></td>
                         <td><span class="course-name">Xây dựng Website đầu tiên</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">04/09/2026</div>
+                            <div class="date-box">04/09</div>
                         </td>
                         <td>
                             <div class="date-box">15/10/2026</div>
@@ -351,18 +372,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="WEB101x_2.2-A_VN" data-start="2026-09-04">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-WEB101x_2.2-A_VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+WEB101x_2.2-A_VN+0822.CCDN/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">2</td>
-                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td><span class="cert-badge cc-CC126">CC1</span></td>
                         <td><span class="course-code">SWE101x_VN</span></td>
                         <td><span class="course-name">Giới thiệu Khoa học máy tính tích hợp AI</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">16/10/2026</div>
+                            <div class="date-box">16/10</div>
                         </td>
                         <td>
                             <div class="date-box">26/11/2026</div>
@@ -373,18 +410,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="SWE101x_VN" data-start="2026-10-16">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-SWE101x_VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+SWE101x_VN+0826/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">3</td>
-                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td><span class="cert-badge cc-CC126">CC1</span></td>
                         <td><span class="course-code">IOT301x_1.1-A_VN</span></td>
                         <td><span class="course-name">Lập trình C cơ bản</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">27/11/2026</div>
+                            <div class="date-box">27/11</div>
                         </td>
                         <td>
                             <div class="date-box">07/01/2027</div>
@@ -395,18 +448,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="IOT301x_1.1-A_VN" data-start="2026-11-27">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-IOT301x_1.1-A_VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+IOT301x_1.1-A_VN+2022_T11/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">4</td>
-                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td><span class="cert-badge cc-CC126">CC1</span></td>
                         <td><span class="course-code">OSM201x.4.0.VN</span></td>
                         <td><span class="course-name">Hệ điều hành</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">08/01/2027</div>
+                            <div class="date-box">08/01</div>
                         </td>
                         <td>
                             <div class="date-box">18/02/2027</div>
@@ -417,18 +486,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="OSM201x.4.0.VN" data-start="2027-01-08">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-OSM201x.4.0.VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+OSM201x.4.0.VN+1222.SE/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">5</td>
-                        <td><span class="cert-badge cc-CC126">CC1.26</span></td>
+                        <td><span class="cert-badge cc-CC126">CC1</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Thiết kế giao diện người dùng với AI</span></td>
-                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
+                        <td><span class="status-badge status-missing">Chưa có</span></td>
                         <td>
-                            <div class="date-box">19/02/2027</div>
+                            <div class="date-box">19/02</div>
                         </td>
                         <td>
                             <div class="date-box">01/04/2027</div>
@@ -439,18 +524,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="đang_cập_nhật" data-start="2027-02-19">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-đang_cập_nhật" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">6</td>
-                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td><span class="cert-badge cc-CC226">CC2</span></td>
                         <td><span class="course-code">PRO192x.3.1.VN</span></td>
                         <td><span class="course-name">Lập trình hướng đối tượng với Java</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">02/04/2027</div>
+                            <div class="date-box">02/04</div>
                         </td>
                         <td>
                             <div class="date-box">13/05/2027</div>
@@ -461,18 +562,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="PRO192x.3.1.VN" data-start="2027-04-02">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-PRO192x.3.1.VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+PRO192x.3.1.VN+1022.SE.DN/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">7</td>
-                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td><span class="cert-badge cc-CC226">CC2</span></td>
                         <td><span class="course-code">LAB101x_03-A_VN</span></td>
                         <td><span class="course-name">Thực hành lập trình Java Lab</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">14/05/2027</div>
+                            <div class="date-box">14/05</div>
                         </td>
                         <td>
                             <div class="date-box">24/06/2027</div>
@@ -483,18 +600,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="LAB101x_03-A_VN" data-start="2027-05-14">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-LAB101x_03-A_VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+LAB101x_03-A_VN+2021_T2/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">8</td>
-                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td><span class="cert-badge cc-CC226">CC2</span></td>
                         <td><span class="course-code">MAD101x.3.0.VN</span></td>
                         <td><span class="course-name">Toán rời rạc</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">25/06/2027</div>
+                            <div class="date-box">25/06</div>
                         </td>
                         <td>
                             <div class="date-box">05/08/2027</div>
@@ -505,18 +638,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="MAD101x.3.0.VN" data-start="2027-06-25">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-MAD101x.3.0.VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+MAD101x.3.0.VN+0423.SE/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">9</td>
-                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td><span class="cert-badge cc-CC226">CC2</span></td>
                         <td><span class="course-code">CSD201x_02-A_VN</span></td>
                         <td><span class="course-name">Cấu trúc dữ liệu và giải thuật</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">06/08/2027</div>
+                            <div class="date-box">06/08</div>
                         </td>
                         <td>
                             <div class="date-box">16/09/2027</div>
@@ -527,18 +676,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="CSD201x_02-A_VN" data-start="2027-08-06">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-CSD201x_02-A_VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+CSD201x_02-A_VN+2020_T5/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">10</td>
-                        <td><span class="cert-badge cc-CC226">CC2.26</span></td>
+                        <td><span class="cert-badge cc-CC226">CC2</span></td>
                         <td><span class="course-code">NTW201x_2.2-A_VN</span></td>
                         <td><span class="course-name">Mạng Máy tính</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">17/09/2027</div>
+                            <div class="date-box">17/09</div>
                         </td>
                         <td>
                             <div class="date-box">28/10/2027</div>
@@ -549,18 +714,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="NTW201x_2.2-A_VN" data-start="2027-09-17">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-NTW201x_2.2-A_VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+NTW201x_2.2-A_VN+2022_T4/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">11</td>
-                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td><span class="cert-badge cc-CC326">CC3</span></td>
                         <td><span class="course-code">DBI202x.3.0.VN</span></td>
                         <td><span class="course-name">Các hệ cơ sở dữ liệu</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">29/10/2027</div>
+                            <div class="date-box">29/10</div>
                         </td>
                         <td>
                             <div class="date-box">09/12/2027</div>
@@ -571,18 +752,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="DBI202x.3.0.VN" data-start="2027-10-29">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-DBI202x.3.0.VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+DBI202x.3.0.VN+1122.SE/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">12</td>
-                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td><span class="cert-badge cc-CC326">CC3</span></td>
                         <td><span class="course-code">PRJ321x</span></td>
                         <td><span class="course-name">Phát triển ứng dụng web với AI</span></td>
-                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
+                        <td><span class="status-badge status-missing">Chưa có</span></td>
                         <td>
-                            <div class="date-box">10/12/2027</div>
+                            <div class="date-box">10/12</div>
                         </td>
                         <td>
                             <div class="date-box">20/01/2028</div>
@@ -593,18 +790,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="PRJ321x" data-start="2027-12-10">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-PRJ321x" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">13</td>
-                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td><span class="cert-badge cc-CC326">CC3</span></td>
                         <td><span class="course-code">SWE102x_03-A_VN</span></td>
                         <td><span class="course-name">Nhập môn kỹ thuật phần mềm</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">21/01/2028</div>
+                            <div class="date-box">21/01</div>
                         </td>
                         <td>
                             <div class="date-box">02/03/2028</div>
@@ -615,18 +828,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="SWE102x_03-A_VN" data-start="2028-01-21">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-SWE102x_03-A_VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+SWE102x_03-A_VN+2022_T8/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">14</td>
-                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td><span class="cert-badge cc-CC326">CC3</span></td>
                         <td><span class="course-code">MAS291x_1.2-A_VN</span></td>
                         <td><span class="course-name">Xác suất thống kê</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">03/03/2028</div>
+                            <div class="date-box">03/03</div>
                         </td>
                         <td>
                             <div class="date-box">13/04/2028</div>
@@ -637,18 +866,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="MAS291x_1.2-A_VN" data-start="2028-03-03">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-MAS291x_1.2-A_VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+MAS291x_1.2-A_VN+2021_T5/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">15</td>
-                        <td><span class="cert-badge cc-CC326">CC3.26</span></td>
+                        <td><span class="cert-badge cc-CC326">CC3</span></td>
                         <td><span class="course-code">PRM391x</span></td>
                         <td><span class="course-name">Lập trình di động</span></td>
-                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
+                        <td><span class="status-badge status-missing">Chưa có</span></td>
                         <td>
-                            <div class="date-box">14/04/2028</div>
+                            <div class="date-box">14/04</div>
                         </td>
                         <td>
                             <div class="date-box">25/05/2028</div>
@@ -659,18 +904,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="PRM391x" data-start="2028-04-14">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-PRM391x" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">16</td>
-                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td><span class="cert-badge cc-CC426">CC4</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Yêu cầu phần mềm với AI hỗ trợ</span></td>
-                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
+                        <td><span class="status-badge status-missing">Chưa có</span></td>
                         <td>
-                            <div class="date-box">26/05/2028</div>
+                            <div class="date-box">26/05</div>
                         </td>
                         <td>
                             <div class="date-box">06/07/2028</div>
@@ -681,18 +942,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="đang_cập_nhật" data-start="2028-05-26">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-đang_cập_nhật" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">17</td>
-                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td><span class="cert-badge cc-CC426">CC4</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Kiến trúc và Thiết kế phần mềm với AI</span></td>
-                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
+                        <td><span class="status-badge status-missing">Chưa có</span></td>
                         <td>
-                            <div class="date-box">07/07/2028</div>
+                            <div class="date-box">07/07</div>
                         </td>
                         <td>
                             <div class="date-box">17/08/2028</div>
@@ -703,18 +980,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="đang_cập_nhật" data-start="2028-07-07">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-đang_cập_nhật" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">18</td>
-                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td><span class="cert-badge cc-CC426">CC4</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Đảm bảo chất lượng và kiểm thử phần mềm với AI</span></td>
-                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
+                        <td><span class="status-badge status-missing">Chưa có</span></td>
                         <td>
-                            <div class="date-box">18/08/2028</div>
+                            <div class="date-box">18/08</div>
                         </td>
                         <td>
                             <div class="date-box">28/09/2028</div>
@@ -725,18 +1018,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="đang_cập_nhật" data-start="2028-08-18">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-đang_cập_nhật" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">19</td>
-                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td><span class="cert-badge cc-CC426">CC4</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Quản trị dự án phần mềm với AI</span></td>
-                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
+                        <td><span class="status-badge status-missing">Chưa có</span></td>
                         <td>
-                            <div class="date-box">29/09/2028</div>
+                            <div class="date-box">29/09</div>
                         </td>
                         <td>
                             <div class="date-box">09/11/2028</div>
@@ -747,18 +1056,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="đang_cập_nhật" data-start="2028-09-29">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-đang_cập_nhật" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">20</td>
-                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td><span class="cert-badge cc-CC426">CC4</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Bảo mật và an ninh trí tuệ nhân tạo</span></td>
-                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
+                        <td><span class="status-badge status-missing">Chưa có</span></td>
                         <td>
-                            <div class="date-box">10/11/2028</div>
+                            <div class="date-box">10/11</div>
                         </td>
                         <td>
                             <div class="date-box">21/12/2028</div>
@@ -769,18 +1094,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="đang_cập_nhật" data-start="2028-11-10">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-đang_cập_nhật" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">21</td>
-                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td><span class="cert-badge cc-CC426">CC4</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Dự án phát triển ứng dụng với AI</span></td>
-                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
+                        <td><span class="status-badge status-missing">Chưa có</span></td>
                         <td>
-                            <div class="date-box">22/12/2028</div>
+                            <div class="date-box">22/12</div>
                         </td>
                         <td>
                             <div class="date-box">01/02/2029</div>
@@ -791,18 +1132,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="đang_cập_nhật" data-start="2028-12-22">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-đang_cập_nhật" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">22</td>
-                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><span class="cert-badge cc-CC526">CC5</span></td>
                         <td><span class="course-code">OJT201x.1.0.VN</span></td>
                         <td><span class="course-name">Đào tạo trong môi trường thực tế</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán</span></td>
                         <td>
-                            <div class="date-box">02/02/2029</div>
+                            <div class="date-box">02/02</div>
                         </td>
                         <td>
                             <div class="date-box">15/03/2029</div>
@@ -813,18 +1170,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="OJT201x.1.0.VN" data-start="2029-02-02">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-OJT201x.1.0.VN" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+OJT201x.1.0.VN+0223.SE/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">23</td>
-                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><span class="cert-badge cc-CC526">CC5</span></td>
                         <td><ul class='options-list'><li><strong>CEA201x</strong></li><li><strong>MAA101x</strong></li><li><strong>MAC101x</strong></li><li><strong>ITE302x.4.0.VN</strong></li></ul></td>
                         <td><ul class='options-list'><li>Tổ chức và kiến trúc máy tính</li><li>Đại số tuyến tính</li><li>Giải tích</li><li>Đạo đức trong CNTT</li></ul></td>
                         <td><ul class='options-list'><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-assigned">Đã gán</span></li></ul></td>
                         <td>
-                            <div class="date-box">16/03/2029</div>
+                            <div class="date-box">16/03</div>
                         </td>
                         <td>
                             <div class="date-box">26/04/2029</div>
@@ -835,18 +1208,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="optional_group" data-start="2029-03-16">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-optional_group" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <div class='buttons-group'><span class="action-link-small link-disabled">Chưa mở</span><span class="action-link-small link-disabled">Chưa mở</span><span class="action-link-small link-disabled">Chưa mở</span><a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+ITE302x.4.0.VN+1022.CC5.SE/info" target="_blank" class="action-link-small">Vào lớp</a></div>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">24</td>
-                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><span class="cert-badge cc-CC526">CC5</span></td>
                         <td><span class="course-code">CSP101x</span></td>
                         <td><span class="course-name">Kỹ thuật lập trình C#</span></td>
-                        <td><span class="status-badge status-requesting">Đang xin cấp quyền</span></td>
+                        <td><span class="status-badge status-requesting">Đang xin cấp</span></td>
                         <td>
-                            <div class="date-box">27/04/2029</div>
+                            <div class="date-box">27/04</div>
                         </td>
                         <td>
                             <div class="date-box">07/06/2029</div>
@@ -857,18 +1246,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="CSP101x" data-start="2029-04-27">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-CSP101x" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">25</td>
-                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><span class="cert-badge cc-CC526">CC5</span></td>
                         <td><span class="course-code">PRC391x</span></td>
                         <td><span class="course-name">Điện toán đám mây</span></td>
-                        <td><span class="status-badge status-requesting">Đang xin cấp quyền</span></td>
+                        <td><span class="status-badge status-requesting">Đang xin cấp</span></td>
                         <td>
-                            <div class="date-box">08/06/2029</div>
+                            <div class="date-box">08/06</div>
                         </td>
                         <td>
                             <div class="date-box">19/07/2029</div>
@@ -879,18 +1284,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="PRC391x" data-start="2029-06-08">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-PRC391x" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">26</td>
-                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><span class="cert-badge cc-CC526">CC5</span></td>
                         <td><span class="course-code">DSP301x</span></td>
                         <td><span class="course-name">Giới thiệu về Khoa học Dữ liệu</span></td>
-                        <td><span class="status-badge status-requesting">Đang xin cấp quyền</span></td>
+                        <td><span class="status-badge status-requesting">Đang xin cấp</span></td>
                         <td>
-                            <div class="date-box">20/07/2029</div>
+                            <div class="date-box">20/07</div>
                         </td>
                         <td>
                             <div class="date-box">30/08/2029</div>
@@ -901,18 +1322,34 @@
                             </div>
                         </td>
                         <td>
+                            
+        <select class="progress-select" data-course="DSP301x" data-start="2029-07-20">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-DSP301x" class="eval-box eval-ontrack">-</div>
+                        </td>
+                        <td>
                             <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">27</td>
-                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><span class="cert-badge cc-CC526">CC5</span></td>
                         <td><span class="course-code">PTS101x</span></td>
                         <td><span class="course-name">Xử lý hình ảnh với Photoshop</span></td>
-                        <td><span class="status-badge status-requesting">Đang xin cấp quyền</span></td>
+                        <td><span class="status-badge status-requesting">Đang xin cấp</span></td>
                         <td>
-                            <div class="date-box">31/08/2029</div>
+                            <div class="date-box">31/08</div>
                         </td>
                         <td>
                             <div class="date-box">11/10/2029</div>
@@ -921,6 +1358,22 @@
                             <div class="progress-weeks" data-start="2029-08-31">
                                 <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
                             </div>
+                        </td>
+                        <td>
+                            
+        <select class="progress-select" data-course="PTS101x" data-start="2029-08-31">
+            <option value="0">Chưa học</option>
+            <option value="1">Xong 1/6</option>
+            <option value="2">Xong 2/6</option>
+            <option value="3">Xong 3/6</option>
+            <option value="4">Xong 4/6</option>
+            <option value="5">Xong 5/6</option>
+            <option value="6">Đã xong</option>
+        </select>
+    
+                        </td>
+                        <td>
+                            <div id="eval-PTS101x" class="eval-box eval-ontrack">-</div>
                         </td>
                         <td>
                             <span class="action-link link-disabled">Chưa mở</span>
@@ -935,6 +1388,8 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const today = new Date();
+            
+            // 1. Vẽ các ô vuông lịch trình (Visual schedule)
             document.querySelectorAll('.progress-weeks').forEach(container => {
                 const startDateStr = container.getAttribute('data-start');
                 const startDate = new Date(startDateStr);
@@ -964,6 +1419,66 @@
                      });
                 }
             });
+            
+            // 2. Logic đánh giá tiến độ thực tế (Dropdown & LocalStorage)
+            const selects = document.querySelectorAll('.progress-select');
+            selects.forEach(select => {
+                const courseId = select.getAttribute('data-course');
+                // Load from storage
+                const savedProgress = localStorage.getItem('se_progress_' + courseId);
+                if (savedProgress !== null) {
+                    select.value = savedProgress;
+                }
+                
+                // Eval on load
+                updateEvaluation(select);
+                
+                // Eval on change
+                select.addEventListener('change', function() {
+                    localStorage.setItem('se_progress_' + courseId, this.value);
+                    updateEvaluation(this);
+                });
+            });
+            
+            function updateEvaluation(select) {
+                const courseId = select.getAttribute('data-course');
+                const evalBox = document.getElementById('eval-' + courseId);
+                const startDateStr = select.getAttribute('data-start');
+                const startDate = new Date(startDateStr);
+                startDate.setHours(0, 0, 0, 0);
+                const todayMidnight = new Date(today);
+                todayMidnight.setHours(0, 0, 0, 0);
+                
+                // Số ngày đã trôi qua kể từ ngày bắt đầu dự kiến
+                const diffTime = todayMidnight - startDate;
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                
+                const userWeeks = parseInt(select.value, 10);
+                
+                // Nếu đã chọn Hoàn thành
+                if (userWeeks === 6) {
+                    evalBox.className = 'eval-box eval-done';
+                    evalBox.innerHTML = 'Đã hoàn thành';
+                    return;
+                }
+                
+                // Số ngày thực tế user đã học (tính theo tuần hoàn thành)
+                const actualDays = userWeeks * 7;
+                
+                // Độ trễ/sớm = Số ngày user đã học - Số ngày dự kiến lẽ ra phải trôi qua
+                const diff = actualDays - diffDays;
+                
+                if (diff > 0) {
+                    evalBox.className = 'eval-box eval-fast';
+                    evalBox.innerHTML = 'Nhanh ' + diff + ' ngày';
+                } else if (diff < 0) {
+                    evalBox.className = 'eval-box eval-slow';
+                    evalBox.innerHTML = 'Chậm ' + Math.abs(diff) + ' ngày';
+                } else {
+                    evalBox.className = 'eval-box eval-ontrack';
+                    evalBox.innerHTML = 'Đúng tiến độ';
+                }
+            }
         });
     </script>
 </body>
