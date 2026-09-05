@@ -32,7 +32,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -83,7 +83,7 @@
         td {
             padding: 1.25rem 1.5rem;
             border-bottom: 1px solid var(--border-color);
-            vertical-align: top;
+            vertical-align: middle;
         }
 
         tr:last-child td {
@@ -100,6 +100,7 @@
             border-radius: 9999px;
             font-size: 0.875rem;
             font-weight: 600;
+            text-align: center;
         }
         
         .cc-CC126 { background-color: var(--cc1); color: var(--cc1-text); }
@@ -126,23 +127,38 @@
             border-radius: 6px;
             font-size: 0.875rem;
             color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            display: inline-block;
         }
         
-        .date-box i {
-            color: var(--primary-color);
+        .action-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            text-align: center;
+            white-space: nowrap;
         }
         
-        .date-col {
-            min-width: 130px;
+        .action-link:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        .link-disabled {
+            background-color: #e2e8f0;
+            color: #94a3b8;
+            cursor: not-allowed;
+            pointer-events: none;
         }
 
         @media (max-width: 768px) {
             body { padding: 1rem; }
             td, th { padding: 1rem; }
-            .date-col { min-width: auto; }
+            .date-box { display: block; margin-bottom: 0.25rem; }
         }
     </style>
 </head>
@@ -162,6 +178,7 @@
                         <th>Thông tin môn học</th>
                         <th>Ngày bắt đầu</th>
                         <th>Ngày kết thúc</th>
+                        <th>Vào lớp</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -173,15 +190,14 @@
                             <span class="course-code">WEB101x</span>
                             <span class="course-name">Xây dựng Website đầu tiên</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                04/09/2026
-                            </div>
+                        <td>
+                            <div class="date-box">04/09/2026</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                15/10/2026
-                            </div>
+                        <td>
+                            <div class="date-box">15/10/2026</div>
+                        </td>
+                        <td>
+                            <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+WEB101x_2.2-A_VN+0822.CCDN/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
@@ -192,15 +208,14 @@
                             <span class="course-code">đang cập nhật</span>
                             <span class="course-name">Giới thiệu Khoa học máy tính tích hợp AI</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                16/10/2026
-                            </div>
+                        <td>
+                            <div class="date-box">16/10/2026</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                26/11/2026
-                            </div>
+                        <td>
+                            <div class="date-box">26/11/2026</div>
+                        </td>
+                        <td>
+                            <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+SWE101x_VN+0826/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
@@ -211,15 +226,14 @@
                             <span class="course-code">IOT301x</span>
                             <span class="course-name">Lập trình C cơ bản</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                27/11/2026
-                            </div>
+                        <td>
+                            <div class="date-box">27/11/2026</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                07/01/2027
-                            </div>
+                        <td>
+                            <div class="date-box">07/01/2027</div>
+                        </td>
+                        <td>
+                            <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+IOT301x_1.1-A_VN+2022_T11/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
@@ -230,15 +244,14 @@
                             <span class="course-code">OSM201x</span>
                             <span class="course-name">Hệ điều hành</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                08/01/2027
-                            </div>
+                        <td>
+                            <div class="date-box">08/01/2027</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                18/02/2027
-                            </div>
+                        <td>
+                            <div class="date-box">18/02/2027</div>
+                        </td>
+                        <td>
+                            <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+OSM201x.4.0.VN+1222.SE/info" target="_blank" class="action-link">Học ngay</a>
                         </td>
                     </tr>
     
@@ -249,15 +262,14 @@
                             <span class="course-code">đang cập nhật</span>
                             <span class="course-name">Thiết kế giao diện người dùng với AI</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                19/02/2027
-                            </div>
+                        <td>
+                            <div class="date-box">19/02/2027</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                01/04/2027
-                            </div>
+                        <td>
+                            <div class="date-box">01/04/2027</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -268,15 +280,14 @@
                             <span class="course-code">PRO192x</span>
                             <span class="course-name">Lập trình hướng đối tượng với Java</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                02/04/2027
-                            </div>
+                        <td>
+                            <div class="date-box">02/04/2027</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                13/05/2027
-                            </div>
+                        <td>
+                            <div class="date-box">13/05/2027</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -287,15 +298,14 @@
                             <span class="course-code">LAB101x</span>
                             <span class="course-name">Thực hành lập trình Java Lab</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                14/05/2027
-                            </div>
+                        <td>
+                            <div class="date-box">14/05/2027</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                24/06/2027
-                            </div>
+                        <td>
+                            <div class="date-box">24/06/2027</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -306,15 +316,14 @@
                             <span class="course-code">MAD101x</span>
                             <span class="course-name">Toán rời rạc</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                25/06/2027
-                            </div>
+                        <td>
+                            <div class="date-box">25/06/2027</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                05/08/2027
-                            </div>
+                        <td>
+                            <div class="date-box">05/08/2027</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -325,15 +334,14 @@
                             <span class="course-code">CSD201x</span>
                             <span class="course-name">Cấu trúc dữ liệu và giải thuật</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                06/08/2027
-                            </div>
+                        <td>
+                            <div class="date-box">06/08/2027</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                16/09/2027
-                            </div>
+                        <td>
+                            <div class="date-box">16/09/2027</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -344,15 +352,14 @@
                             <span class="course-code">NTW201x</span>
                             <span class="course-name">Mạng Máy tính</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                17/09/2027
-                            </div>
+                        <td>
+                            <div class="date-box">17/09/2027</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                28/10/2027
-                            </div>
+                        <td>
+                            <div class="date-box">28/10/2027</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -363,15 +370,14 @@
                             <span class="course-code">DBI202x</span>
                             <span class="course-name">Các hệ cơ sở dữ liệu</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                29/10/2027
-                            </div>
+                        <td>
+                            <div class="date-box">29/10/2027</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                09/12/2027
-                            </div>
+                        <td>
+                            <div class="date-box">09/12/2027</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -382,15 +388,14 @@
                             <span class="course-code">PRJ321x</span>
                             <span class="course-name">Phát triển ứng dụng web với AI</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                10/12/2027
-                            </div>
+                        <td>
+                            <div class="date-box">10/12/2027</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                20/01/2028
-                            </div>
+                        <td>
+                            <div class="date-box">20/01/2028</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -401,15 +406,14 @@
                             <span class="course-code">SWE102x</span>
                             <span class="course-name">Nhập môn kỹ thuật phần mềm</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                21/01/2028
-                            </div>
+                        <td>
+                            <div class="date-box">21/01/2028</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                02/03/2028
-                            </div>
+                        <td>
+                            <div class="date-box">02/03/2028</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -420,15 +424,14 @@
                             <span class="course-code">MAS291x</span>
                             <span class="course-name">Xác suất thống kê</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                03/03/2028
-                            </div>
+                        <td>
+                            <div class="date-box">03/03/2028</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                13/04/2028
-                            </div>
+                        <td>
+                            <div class="date-box">13/04/2028</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -439,15 +442,14 @@
                             <span class="course-code">PRM391x</span>
                             <span class="course-name">Lập trình di động</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                14/04/2028
-                            </div>
+                        <td>
+                            <div class="date-box">14/04/2028</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                25/05/2028
-                            </div>
+                        <td>
+                            <div class="date-box">25/05/2028</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -458,15 +460,14 @@
                             <span class="course-code">đang cập nhật</span>
                             <span class="course-name">Yêu cầu phần mềm với AI hỗ trợ</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                26/05/2028
-                            </div>
+                        <td>
+                            <div class="date-box">26/05/2028</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                06/07/2028
-                            </div>
+                        <td>
+                            <div class="date-box">06/07/2028</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -477,15 +478,14 @@
                             <span class="course-code">đang cập nhật</span>
                             <span class="course-name">Kiến trúc và Thiết kế phần mềm với AI</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                07/07/2028
-                            </div>
+                        <td>
+                            <div class="date-box">07/07/2028</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                17/08/2028
-                            </div>
+                        <td>
+                            <div class="date-box">17/08/2028</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -496,15 +496,14 @@
                             <span class="course-code">đang cập nhật</span>
                             <span class="course-name">Đảm bảo chất lượng và kiểm thử phần mềm với AI</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                18/08/2028
-                            </div>
+                        <td>
+                            <div class="date-box">18/08/2028</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                28/09/2028
-                            </div>
+                        <td>
+                            <div class="date-box">28/09/2028</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -515,15 +514,14 @@
                             <span class="course-code">đang cập nhật</span>
                             <span class="course-name">Quản trị dự án phần mềm với AI</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                29/09/2028
-                            </div>
+                        <td>
+                            <div class="date-box">29/09/2028</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                09/11/2028
-                            </div>
+                        <td>
+                            <div class="date-box">09/11/2028</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -534,15 +532,14 @@
                             <span class="course-code">đang cập nhật</span>
                             <span class="course-name">Bảo mật và an ninh trí tuệ nhân tạo</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                10/11/2028
-                            </div>
+                        <td>
+                            <div class="date-box">10/11/2028</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                21/12/2028
-                            </div>
+                        <td>
+                            <div class="date-box">21/12/2028</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -553,15 +550,14 @@
                             <span class="course-code">đang cập nhật</span>
                             <span class="course-name">Dự án phát triển ứng dụng với AI</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                22/12/2028
-                            </div>
+                        <td>
+                            <div class="date-box">22/12/2028</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                01/02/2029
-                            </div>
+                        <td>
+                            <div class="date-box">01/02/2029</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -572,15 +568,14 @@
                             <span class="course-code">OJT201x</span>
                             <span class="course-name">Đào tạo trong môi trường thực tế</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                02/02/2029
-                            </div>
+                        <td>
+                            <div class="date-box">02/02/2029</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                15/03/2029
-                            </div>
+                        <td>
+                            <div class="date-box">15/03/2029</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
@@ -591,15 +586,14 @@
                             <span class="course-code">Môn tự chọn</span>
                             <span class="course-name">Môn tự chọn (VD: CEA201x, MAA101x, MAC101x, ITE302x)</span>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                16/03/2029
-                            </div>
+                        <td>
+                            <div class="date-box">16/03/2029</div>
                         </td>
-                        <td class="date-col">
-                            <div class="date-box">
-                                26/04/2029
-                            </div>
+                        <td>
+                            <div class="date-box">26/04/2029</div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
