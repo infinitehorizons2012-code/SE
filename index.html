@@ -134,9 +134,22 @@
         }
         
         .status-missing {
-            background-color: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #fecaca;
+            background-color: #f3f4f6;
+            color: #4b5563;
+            border: 1px solid #e5e7eb;
+        }
+
+        .status-requesting {
+            background-color: #fef08a;
+            color: #854d0e;
+            border: 1px solid #fde047;
+            animation: requestPulse 2s infinite;
+        }
+        
+        @keyframes requestPulse {
+            0% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(253, 224, 71, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0); }
         }
         
         .cc-CC126 { background-color: var(--cc1); color: var(--cc1-text); }
@@ -287,6 +300,9 @@
             </div>
             <div class="legend-item">
                 <span class="status-badge status-missing">Chưa có trên hệ thống</span>
+            </div>
+            <div class="legend-item">
+                <span class="status-badge status-requesting">Đang xin cấp quyền</span>
             </div>
             <div style="width: 20px;"></div>
             <div class="legend-item">
@@ -781,10 +797,10 @@
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">22</td>
-                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
-                        <td><span class="course-code">OJT201x.1.0.VN</span></td>
-                        <td><span class="course-name">Đào tạo trong môi trường thực tế</span></td>
-                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
+                        <td><span class="cert-badge cc-CC426">CC4.26</span></td>
+                        <td><span class="course-code">PTS101x</span></td>
+                        <td><span class="course-name">Xử lý hình ảnh với Photoshop</span></td>
+                        <td><span class="status-badge status-requesting">Đang xin cấp quyền</span></td>
                         <td>
                             <div class="date-box">02/02/2029</div>
                         </td>
@@ -797,16 +813,16 @@
                             </div>
                         </td>
                         <td>
-                            <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+OJT201x.1.0.VN+0223.SE/info" target="_blank" class="action-link">Học ngay</a>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
                     <tr>
                         <td style="color: var(--text-secondary); font-weight: 600;">23</td>
                         <td><span class="cert-badge cc-CC526">CC5.26</span></td>
-                        <td><ul class='options-list'><li><strong>CEA201x</strong></li><li><strong>MAA101x</strong></li><li><strong>MAC101x</strong></li><li><strong>ITE302x.4.0.VN</strong></li></ul></td>
-                        <td><ul class='options-list'><li>Tổ chức và kiến trúc máy tính</li><li>Đại số tuyến tính</li><li>Giải tích</li><li>Đạo đức trong CNTT</li></ul></td>
-                        <td><ul class='options-list'><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-assigned">Đã gán</span></li></ul></td>
+                        <td><span class="course-code">OJT201x.1.0.VN</span></td>
+                        <td><span class="course-name">Đào tạo trong môi trường thực tế</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">16/03/2029</div>
                         </td>
@@ -819,7 +835,95 @@
                             </div>
                         </td>
                         <td>
+                            <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+OJT201x.1.0.VN+0223.SE/info" target="_blank" class="action-link">Học ngay</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">24</td>
+                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><ul class='options-list'><li><strong>CEA201x</strong></li><li><strong>MAA101x</strong></li><li><strong>MAC101x</strong></li><li><strong>ITE302x.4.0.VN</strong></li></ul></td>
+                        <td><ul class='options-list'><li>Tổ chức và kiến trúc máy tính</li><li>Đại số tuyến tính</li><li>Giải tích</li><li>Đạo đức trong CNTT</li></ul></td>
+                        <td><ul class='options-list'><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-assigned">Đã gán</span></li></ul></td>
+                        <td>
+                            <div class="date-box">27/04/2029</div>
+                        </td>
+                        <td>
+                            <div class="date-box">07/06/2029</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2029-04-27">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
                             <div class='buttons-group'><span class="action-link-small link-disabled">Chưa mở</span><span class="action-link-small link-disabled">Chưa mở</span><span class="action-link-small link-disabled">Chưa mở</span><a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+ITE302x.4.0.VN+1022.CC5.SE/info" target="_blank" class="action-link-small">Vào lớp</a></div>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">25</td>
+                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><span class="course-code">CSP101x</span></td>
+                        <td><span class="course-name">Kỹ thuật lập trình C#</span></td>
+                        <td><span class="status-badge status-requesting">Đang xin cấp quyền</span></td>
+                        <td>
+                            <div class="date-box">08/06/2029</div>
+                        </td>
+                        <td>
+                            <div class="date-box">19/07/2029</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2029-06-08">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">26</td>
+                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><span class="course-code">PRC391x</span></td>
+                        <td><span class="course-name">Điện toán đám mây</span></td>
+                        <td><span class="status-badge status-requesting">Đang xin cấp quyền</span></td>
+                        <td>
+                            <div class="date-box">20/07/2029</div>
+                        </td>
+                        <td>
+                            <div class="date-box">30/08/2029</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2029-07-20">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="color: var(--text-secondary); font-weight: 600;">27</td>
+                        <td><span class="cert-badge cc-CC526">CC5.26</span></td>
+                        <td><span class="course-code">DSP301x</span></td>
+                        <td><span class="course-name">Giới thiệu về Khoa học Dữ liệu</span></td>
+                        <td><span class="status-badge status-requesting">Đang xin cấp quyền</span></td>
+                        <td>
+                            <div class="date-box">31/08/2029</div>
+                        </td>
+                        <td>
+                            <div class="date-box">11/10/2029</div>
+                        </td>
+                        <td>
+                            <div class="progress-weeks" data-start="2029-08-31">
+                                <div class="week-box" title="Tuần 1"></div><div class="week-box" title="Tuần 2"></div><div class="week-box" title="Tuần 3"></div><div class="week-box" title="Tuần 4"></div><div class="week-box" title="Tuần 5"></div><div class="week-box" title="Tuần 6"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="action-link link-disabled">Chưa mở</span>
                         </td>
                     </tr>
     
