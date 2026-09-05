@@ -144,7 +144,22 @@
             white-space: nowrap;
         }
         
-        .action-link:hover {
+        .action-link-small {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 0.1rem 0;
+            transition: background-color 0.2s;
+            text-align: center;
+            width: 110px;
+        }
+
+        .action-link:hover, .action-link-small:hover {
             background-color: var(--primary-hover);
         }
         
@@ -153,6 +168,21 @@
             color: #94a3b8;
             cursor: not-allowed;
             pointer-events: none;
+        }
+        
+        .options-list {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .options-list li {
+            margin-bottom: 4px;
+        }
+        .buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
 
         @media (max-width: 768px) {
@@ -584,7 +614,7 @@
                         <td><span class="cert-badge cc-CC526">CC5.26</span></td>
                         <td>
                             <span class="course-code">Môn tự chọn (chọn 1)</span>
-                            <span class="course-name">CEA201x (Tổ chức và kiến trúc máy tính)<br>MAA101x (Đại số tuyến tính)<br>MAC101x (Giải tích)<br>ITE302x (Đạo đức trong CNTT)</span>
+                            <ul class='options-list'><li><strong>CEA201x</strong>: Tổ chức và kiến trúc máy tính</li><li><strong>MAA101x</strong>: Đại số tuyến tính</li><li><strong>MAC101x</strong>: Giải tích</li><li><strong>ITE302x</strong>: Đạo đức trong CNTT</li></ul>
                         </td>
                         <td>
                             <div class="date-box">16/03/2029</div>
@@ -593,7 +623,7 @@
                             <div class="date-box">26/04/2029</div>
                         </td>
                         <td>
-                            <a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+ITE302x.4.0.VN+1022.CC5.SE/info" target="_blank" class="action-link">Học ngay</a>
+                            <div class='buttons-group'><span class="action-link-small link-disabled">CEA201x (Chưa mở)</span><span class="action-link-small link-disabled">MAA101x (Chưa mở)</span><span class="action-link-small link-disabled">MAC101x (Chưa mở)</span><a href="https://courses.funix.edu.vn/courses/course-v1:FUNiX+ITE302x.4.0.VN+1022.CC5.SE/info" target="_blank" class="action-link-small">Vào ITE302x</a></div>
                         </td>
                     </tr>
     
