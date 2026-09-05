@@ -32,7 +32,7 @@
         }
 
         .container {
-            max-width: 1350px;
+            max-width: 1450px;
             margin: 0 auto;
         }
 
@@ -117,6 +117,28 @@
             text-align: center;
         }
         
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .status-assigned {
+            background-color: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .status-missing {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        
         .cc-CC126 { background-color: var(--cc1); color: var(--cc1-text); }
         .cc-CC226 { background-color: var(--cc2); color: var(--cc2-text); }
         .cc-CC326 { background-color: var(--cc3); color: var(--cc3-text); }
@@ -170,7 +192,7 @@
             margin: 0.1rem 0;
             transition: background-color 0.2s;
             text-align: center;
-            width: 110px;
+            width: 90px;
         }
 
         .action-link:hover, .action-link-small:hover {
@@ -255,16 +277,23 @@
 <body>
     <div class="container">
         <header>
-            <h1>Lộ Trình Học Tập</h1>
-            <p class="subtitle">Chương trình đào tạo Kỹ sư Phần mềm (Hình 1) - Dự kiến 6 tuần/môn</p>
+            <h1>Lộ Trình Học Tập & Quản Lý Tài Khoản</h1>
+            <p class="subtitle">Chương trình đào tạo Kỹ sư Phần mềm (Hình 1) - Đối chiếu với tài khoản học</p>
         </header>
 
         <div class="legend-container">
             <div class="legend-item">
+                <span class="status-badge status-assigned">Đã gán trên tài khoản</span>
+            </div>
+            <div class="legend-item">
+                <span class="status-badge status-missing">Chưa có trên hệ thống</span>
+            </div>
+            <div style="width: 20px;"></div>
+            <div class="legend-item">
                 <div class="week-box week-past"></div> Đã hoàn thành
             </div>
             <div class="legend-item">
-                <div class="week-box week-current"></div> Đang học (Tuần hiện tại)
+                <div class="week-box week-current"></div> Đang học
             </div>
             <div class="legend-item">
                 <div class="week-box"></div> Chưa học
@@ -279,9 +308,10 @@
                         <th>Chứng chỉ</th>
                         <th>Mã môn</th>
                         <th>Tên môn</th>
+                        <th>Tình trạng</th>
                         <th>Ngày bắt đầu</th>
                         <th>Ngày kết thúc</th>
-                        <th>Tiến độ (6 Tuần)</th>
+                        <th>Tiến độ</th>
                         <th>Vào lớp</th>
                     </tr>
                 </thead>
@@ -292,6 +322,7 @@
                         <td><span class="cert-badge cc-CC126">CC1.26</span></td>
                         <td><span class="course-code">WEB101x_2.2-A_VN</span></td>
                         <td><span class="course-name">Xây dựng Website đầu tiên</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">04/09/2026</div>
                         </td>
@@ -313,6 +344,7 @@
                         <td><span class="cert-badge cc-CC126">CC1.26</span></td>
                         <td><span class="course-code">SWE101x_VN</span></td>
                         <td><span class="course-name">Giới thiệu Khoa học máy tính tích hợp AI</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">16/10/2026</div>
                         </td>
@@ -334,6 +366,7 @@
                         <td><span class="cert-badge cc-CC126">CC1.26</span></td>
                         <td><span class="course-code">IOT301x_1.1-A_VN</span></td>
                         <td><span class="course-name">Lập trình C cơ bản</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">27/11/2026</div>
                         </td>
@@ -355,6 +388,7 @@
                         <td><span class="cert-badge cc-CC126">CC1.26</span></td>
                         <td><span class="course-code">OSM201x.4.0.VN</span></td>
                         <td><span class="course-name">Hệ điều hành</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">08/01/2027</div>
                         </td>
@@ -376,6 +410,7 @@
                         <td><span class="cert-badge cc-CC126">CC1.26</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Thiết kế giao diện người dùng với AI</span></td>
+                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
                         <td>
                             <div class="date-box">19/02/2027</div>
                         </td>
@@ -397,6 +432,7 @@
                         <td><span class="cert-badge cc-CC226">CC2.26</span></td>
                         <td><span class="course-code">PRO192x.3.1.VN</span></td>
                         <td><span class="course-name">Lập trình hướng đối tượng với Java</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">02/04/2027</div>
                         </td>
@@ -418,6 +454,7 @@
                         <td><span class="cert-badge cc-CC226">CC2.26</span></td>
                         <td><span class="course-code">LAB101x_03-A_VN</span></td>
                         <td><span class="course-name">Thực hành lập trình Java Lab</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">14/05/2027</div>
                         </td>
@@ -439,6 +476,7 @@
                         <td><span class="cert-badge cc-CC226">CC2.26</span></td>
                         <td><span class="course-code">MAD101x.3.0.VN</span></td>
                         <td><span class="course-name">Toán rời rạc</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">25/06/2027</div>
                         </td>
@@ -460,6 +498,7 @@
                         <td><span class="cert-badge cc-CC226">CC2.26</span></td>
                         <td><span class="course-code">CSD201x_02-A_VN</span></td>
                         <td><span class="course-name">Cấu trúc dữ liệu và giải thuật</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">06/08/2027</div>
                         </td>
@@ -481,6 +520,7 @@
                         <td><span class="cert-badge cc-CC226">CC2.26</span></td>
                         <td><span class="course-code">NTW201x_2.2-A_VN</span></td>
                         <td><span class="course-name">Mạng Máy tính</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">17/09/2027</div>
                         </td>
@@ -502,6 +542,7 @@
                         <td><span class="cert-badge cc-CC326">CC3.26</span></td>
                         <td><span class="course-code">DBI202x.3.0.VN</span></td>
                         <td><span class="course-name">Các hệ cơ sở dữ liệu</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">29/10/2027</div>
                         </td>
@@ -523,6 +564,7 @@
                         <td><span class="cert-badge cc-CC326">CC3.26</span></td>
                         <td><span class="course-code">PRJ321x</span></td>
                         <td><span class="course-name">Phát triển ứng dụng web với AI</span></td>
+                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
                         <td>
                             <div class="date-box">10/12/2027</div>
                         </td>
@@ -544,6 +586,7 @@
                         <td><span class="cert-badge cc-CC326">CC3.26</span></td>
                         <td><span class="course-code">SWE102x_03-A_VN</span></td>
                         <td><span class="course-name">Nhập môn kỹ thuật phần mềm</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">21/01/2028</div>
                         </td>
@@ -565,6 +608,7 @@
                         <td><span class="cert-badge cc-CC326">CC3.26</span></td>
                         <td><span class="course-code">MAS291x_1.2-A_VN</span></td>
                         <td><span class="course-name">Xác suất thống kê</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">03/03/2028</div>
                         </td>
@@ -586,6 +630,7 @@
                         <td><span class="cert-badge cc-CC326">CC3.26</span></td>
                         <td><span class="course-code">PRM391x</span></td>
                         <td><span class="course-name">Lập trình di động</span></td>
+                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
                         <td>
                             <div class="date-box">14/04/2028</div>
                         </td>
@@ -607,6 +652,7 @@
                         <td><span class="cert-badge cc-CC426">CC4.26</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Yêu cầu phần mềm với AI hỗ trợ</span></td>
+                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
                         <td>
                             <div class="date-box">26/05/2028</div>
                         </td>
@@ -628,6 +674,7 @@
                         <td><span class="cert-badge cc-CC426">CC4.26</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Kiến trúc và Thiết kế phần mềm với AI</span></td>
+                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
                         <td>
                             <div class="date-box">07/07/2028</div>
                         </td>
@@ -649,6 +696,7 @@
                         <td><span class="cert-badge cc-CC426">CC4.26</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Đảm bảo chất lượng và kiểm thử phần mềm với AI</span></td>
+                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
                         <td>
                             <div class="date-box">18/08/2028</div>
                         </td>
@@ -670,6 +718,7 @@
                         <td><span class="cert-badge cc-CC426">CC4.26</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Quản trị dự án phần mềm với AI</span></td>
+                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
                         <td>
                             <div class="date-box">29/09/2028</div>
                         </td>
@@ -691,6 +740,7 @@
                         <td><span class="cert-badge cc-CC426">CC4.26</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Bảo mật và an ninh trí tuệ nhân tạo</span></td>
+                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
                         <td>
                             <div class="date-box">10/11/2028</div>
                         </td>
@@ -712,6 +762,7 @@
                         <td><span class="cert-badge cc-CC426">CC4.26</span></td>
                         <td><span class="course-code">đang cập nhật</span></td>
                         <td><span class="course-name">Dự án phát triển ứng dụng với AI</span></td>
+                        <td><span class="status-badge status-missing">Chưa có trên hệ thống</span></td>
                         <td>
                             <div class="date-box">22/12/2028</div>
                         </td>
@@ -733,6 +784,7 @@
                         <td><span class="cert-badge cc-CC526">CC5.26</span></td>
                         <td><span class="course-code">OJT201x.1.0.VN</span></td>
                         <td><span class="course-name">Đào tạo trong môi trường thực tế</span></td>
+                        <td><span class="status-badge status-assigned">Đã gán trên tài khoản</span></td>
                         <td>
                             <div class="date-box">02/02/2029</div>
                         </td>
@@ -754,6 +806,7 @@
                         <td><span class="cert-badge cc-CC526">CC5.26</span></td>
                         <td><ul class='options-list'><li><strong>CEA201x</strong></li><li><strong>MAA101x</strong></li><li><strong>MAC101x</strong></li><li><strong>ITE302x.4.0.VN</strong></li></ul></td>
                         <td><ul class='options-list'><li>Tổ chức và kiến trúc máy tính</li><li>Đại số tuyến tính</li><li>Giải tích</li><li>Đạo đức trong CNTT</li></ul></td>
+                        <td><ul class='options-list'><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-missing">Chưa gán</span></li><li><span class="status-badge status-assigned">Đã gán</span></li></ul></td>
                         <td>
                             <div class="date-box">16/03/2029</div>
                         </td>
@@ -778,24 +831,19 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const today = new Date();
-            
             document.querySelectorAll('.progress-weeks').forEach(container => {
                 const startDateStr = container.getAttribute('data-start');
                 const startDate = new Date(startDateStr);
                 const boxes = container.querySelectorAll('.week-box');
-                
                 startDate.setHours(0, 0, 0, 0);
                 const todayMidnight = new Date(today);
                 todayMidnight.setHours(0, 0, 0, 0);
-                
                 const diffTime = todayMidnight - startDate;
                 const diffDays = diffTime / (1000 * 60 * 60 * 24);
-                
                 let currentWeekIndex = -1;
                 if (diffDays >= 0) {
                     currentWeekIndex = Math.floor(diffDays / 7);
                 }
-                
                 boxes.forEach((box, index) => {
                     box.classList.remove('week-past', 'week-current', 'week-future');
                     if (diffDays < 0) {
@@ -803,10 +851,8 @@
                         box.classList.add('week-past');
                     } else if (index === currentWeekIndex) {
                         box.classList.add('week-current');
-                    } else {
                     }
                 });
-                
                 if (diffDays >= 42) {
                      boxes.forEach(box => {
                          box.classList.remove('week-current');
